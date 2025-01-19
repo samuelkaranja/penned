@@ -1,0 +1,16 @@
+.banner {
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.banner .banner-text {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.banner .banner-text span {
+  font-size: 50px;
+  font-weight: 800;
+}

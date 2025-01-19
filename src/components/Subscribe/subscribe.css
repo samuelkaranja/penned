@@ -1,0 +1,22 @@
+.subscribe input {
+  width: 60%;
+  background-color: rgb(249 250 251);
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.subscribe input:focus {
+  outline: none;
+}
+
+.subscribe .btn {
+  background: #000;
+  color: #fff;
+  padding: 12px;
+}
+
+.subscribe .message {
+  color: orange;
+  font-weight: 400;
+}

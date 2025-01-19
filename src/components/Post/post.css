@@ -1,0 +1,38 @@
+.post img {
+  width: 100%;
+  height: 25vh;
+  border-radius: 10px;
+}
+
+.post .body {
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.post .body .dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.post .body .dl svg {
+  font-size: 20px;
+  color: green;
+}
+
+.post .body .title {
+  color: #111827;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.75rem;
+}
+
+.post .body .title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.post .body .subtitle {
+  margin: 5px 0;
+}
