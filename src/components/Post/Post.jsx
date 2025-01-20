@@ -1,8 +1,11 @@
 import "./post.css";
 import { CiHeart } from "react-icons/ci";
 import image from "../../assets/react.png";
+import { Link } from "react-router-dom";
 
-const Post = () => {
+const Post = ({ blog }) => {
+  const slug = blog?.title.replace(/\s+/g, "-"); // Replace spaces with dashes
+
   return (
     <div className="post">
       <img src={image} alt="" />
@@ -13,11 +16,11 @@ const Post = () => {
             <CiHeart />
           </small>
         </div>
-        <span className="title">
-          React Will FINALLY Gets Its Own Animations
-        </span>
-        <p className="subtitle">And five years of React Native at Shopify</p>
-        <small className="author">Author: Samuel</small>
+        <Link to={`/details/${slug}`} className="title">
+          {blog?.title}
+        </Link>
+        <p className="subtitle">{blog?.subtitle}</p>
+        <small className="author">Author: {blog?.author}</small>
       </div>
     </div>
   );

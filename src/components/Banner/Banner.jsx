@@ -14,8 +14,12 @@ const Banner = () => {
         <p>
           Let's dive into the world of technology! Whether you're a seasoned
           developer, an open-source enthusiast, or just starting your tech
-          journey, <i>penned</i> is your go-to hub for insights, tutorials, and
-          the latest innovations in the tech universe.
+          journey,{" "}
+          <i>
+            <u>penned</u>
+          </i>{" "}
+          is your go-to hub for insights, tutorials, and the latest innovations
+          in the tech universe.
         </p>
         <Subscribe />
       </div>
