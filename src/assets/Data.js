@@ -41,4 +41,14 @@ export const posts = [
     author: "penned",
     date_published: "January 16, 2025",
   },
+  {
+    id: 5,
+    image: show,
+    title: "React Cheat Sheet",
+    subtitle: "And why does everybody use Tailwind?",
+    description:
+      "I’m sharing a really popular Reddit thread on Tailwind CSS, diving into 10 React tips you’ll wish you knew earlier, and exploring a handy React server feature cheat sheet to simplify your projects. Plus a ton more.",
+    author: "penned",
+    date_published: "January 20, 2025",
+  },
 ];

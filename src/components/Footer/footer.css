@@ -1,0 +1,35 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: #030712;
+  margin-top: 60px;
+  padding: 30px 100px;
+  color: #fff;
+}
+
+.footer .about a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer .about span {
+  display: block;
+  padding: 8px 0;
+}
+
+.footer .links ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.footer .links ul li a {
+  color: #fff;
+}
+
+.footer .links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer .terms {
+  text-align: center;
+}
