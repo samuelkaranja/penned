@@ -1,6 +1,5 @@
 import "./post.css";
 import { CiHeart } from "react-icons/ci";
-import image from "../../assets/react.png";
 import { Link } from "react-router-dom";
 
 const Post = ({ blog }) => {
@@ -8,10 +7,10 @@ const Post = ({ blog }) => {
 
   return (
     <div className="post">
-      <img src={image} alt="" />
+      <img src={blog?.image} alt="" />
       <div className="body">
         <div className="dl">
-          <small>Jan 16, 2025</small>
+          <small>{blog?.date_published}</small>
           <small>
             <CiHeart />
           </small>
