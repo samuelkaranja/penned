@@ -51,4 +51,14 @@ export const posts = [
     author: "penned",
     date_published: "January 20, 2025",
   },
+  {
+    id: 6,
+    image: show,
+    title: "React Data Fetching Secrets",
+    subtitle: "And moving 50,000 lines of code to RSC",
+    description:
+      "I’d like to start by offering a heartfelt thank you for all your support during my Black Friday Project React Sale. I truly can’t thank you enough and can’t wait to see how you become amazing React developers!",
+    author: "penned",
+    date_published: "January 20, 2025",
+  },
 ];

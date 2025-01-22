@@ -1,19 +1,20 @@
 import { useContext } from "react";
-import { Banner, Post } from "../../components";
+import { Banner, Post, Search } from "../../components";
 import "./home.css";
 import { GlobalContext } from "../../context/context";
 
 const Home = () => {
-  const { posts } = useContext(GlobalContext);
+  const { filteredPosts } = useContext(GlobalContext);
 
   return (
     <div className="home">
       <Banner />
       <div className="archive">
         <h2>Posts</h2>
+        <Search />
         <div className="posts">
-          {posts && posts.length > 0 ? (
-            posts.map((blog) => <Post blog={blog} key={blog.id} />)
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((blog) => <Post blog={blog} key={blog.id} />)
           ) : (
             <h2>No posts available!!</h2>
           )}

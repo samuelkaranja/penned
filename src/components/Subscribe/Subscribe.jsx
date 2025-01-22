@@ -15,7 +15,7 @@ const Subscribe = () => {
 
     setTimeout(() => {
       setSuccessMessage("");
-    }, 5000);
+    }, 10000);
   };
 
   return (

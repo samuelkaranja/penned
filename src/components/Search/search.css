@@ -1,0 +1,21 @@
+.search {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  margin: 5px 0 25px 0;
+}
+
+.search .search-icons {
+  padding: 0 5px 0 10px;
+}
+
+.search input {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  background: #f9fafb;
+}
+
+.search input:focus {
+  outline: none;
+}
