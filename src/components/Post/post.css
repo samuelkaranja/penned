@@ -36,3 +36,25 @@
 .post .body .subtitle {
   margin: 5px 0;
 }
+
+/* ........... Tablet ..............*/
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .post {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ............ Mobile ............... */
+
+@media only screen and (max-width: 425px) {
+  .post {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .post img {
+    height: 30vh;
+  }
+}

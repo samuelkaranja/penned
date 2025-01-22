@@ -20,3 +20,11 @@
   color: orange;
   font-weight: 400;
 }
+
+/* ............ Mobile ............... */
+
+@media only screen and (max-width: 425px) {
+  .subscribe .message {
+    font-size: 14px;
+  }
+}

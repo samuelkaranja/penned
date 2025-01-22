@@ -33,3 +33,30 @@
 .footer .terms {
   text-align: center;
 }
+
+/* ........... Tablet ..............*/
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 30px 40px;
+  }
+}
+
+/* ............ Mobile ............... */
+
+@media only screen and (max-width: 425px) {
+  .footer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding: 30px 40px;
+  }
+
+  .footer .links ul {
+    text-align: left;
+  }
+
+  .footer .links ul li {
+    display: inline;
+    padding: 0 10px;
+  }
+}
