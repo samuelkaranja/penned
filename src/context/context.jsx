@@ -1,8 +1,6 @@
 import { createContext, useState } from "react";
 import { posts } from "../assets/Data";
 
-console.log(posts);
-
 export const GlobalContext = createContext();
 
 const GlobalState = ({ children }) => {
@@ -14,9 +12,7 @@ const GlobalState = ({ children }) => {
   );
 
   return (
-    <GlobalContext.Provider
-      value={{ posts, searchText, setSearchText, filteredPosts }}
-    >
+    <GlobalContext.Provider value={{ posts, setSearchText, filteredPosts }}>
       {children}
     </GlobalContext.Provider>
   );

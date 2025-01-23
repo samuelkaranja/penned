@@ -21,8 +21,28 @@
   color: #3e3e3e;
 }
 
+.postdetails .author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .postdetails .more .author small {
   display: block;
+}
+
+.postdetails .author .social ul {
+  list-style-type: none;
+}
+
+.postdetails .author .social ul li {
+  display: inline-block;
+  padding: 0 12px;
+}
+
+.postdetails .author .social ul li svg {
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .postdetails .more .image img {
@@ -50,5 +70,13 @@
 @media only screen and (max-width: 425px) {
   .postdetails {
     padding: 0 20px;
+  }
+
+  .postdetails .author .social ul li {
+    padding: 0 8px;
+  }
+
+  .postdetails .author .social ul li svg {
+    font-size: 18px;
   }
 }

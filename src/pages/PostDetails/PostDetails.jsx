@@ -2,6 +2,10 @@ import { useParams } from "react-router-dom";
 import "./postdetails.css";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/context";
+import { FaFacebook } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
 
 const PostDetails = () => {
   const { title } = useParams();
@@ -20,8 +24,26 @@ const PostDetails = () => {
           <span className="subtitle">{blogdetails?.subtitle}</span>
         </div>
         <div className="author">
-          <small>Author: {blogdetails?.author}</small>
-          <small>Published: {blogdetails?.date_published}</small>
+          <div className="name">
+            <small>Author: {blogdetails?.author}</small>
+            <small>Published: {blogdetails?.date_published}</small>
+          </div>
+          <div className="social">
+            <ul>
+              <li>
+                <FaFacebook />
+              </li>
+              <li>
+                <FaSquareXTwitter />
+              </li>
+              <li>
+                <FaInstagramSquare />
+              </li>
+              <li>
+                <FaLinkedin />
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="image">
           <img src={blogdetails?.image} alt="" />
