@@ -1,0 +1,9 @@
+.createpost {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.createpost h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

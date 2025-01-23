@@ -1,0 +1,54 @@
+.addpost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addpost form {
+  width: 35%;
+}
+
+.addpost label {
+  display: block;
+  padding: 6px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.addpost input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.addpost input:focus {
+  outline: none;
+  border: 1px solid lightgrey;
+}
+
+.addpost textarea {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+
+.addpost textarea:focus {
+  outline: none;
+  border: 1px solid lightgrey;
+}
+
+.addpost .post_btn {
+  display: block;
+  margin: 0 20px;
+  background: purple;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px 25px;
+  font-size: 17px;
+  cursor: pointer;
+}
