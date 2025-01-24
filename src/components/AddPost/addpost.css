@@ -6,13 +6,8 @@
 }
 
 .addpost .frm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.addpost form {
-  width: 35%;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .addpost label {
@@ -40,6 +35,8 @@
   padding: 10px 20px;
   border: 1px solid lightgrey;
   border-radius: 5px;
+  font-family: "Helvetica", Arial, sans-serif;
+  line-height: 1.5;
 }
 
 .addpost textarea:focus {
@@ -58,4 +55,21 @@
   padding: 10px 25px;
   font-size: 17px;
   cursor: pointer;
+}
+
+/* ........... Tablet ..............*/
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  .addpost .frm {
+    width: 70%;
+  }
+}
+
+/* ............ Mobile ............... */
+
+@media only screen and (max-width: 425px) {
+  .addpost .frm {
+    width: 70%;
+    margin: 0 40px;
+  }
 }

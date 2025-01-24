@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 10px 0 20px 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -12,12 +13,24 @@
   padding-right: 4px;
 }
 
-.nav a {
+.nav .logo {
   color: #000;
   font-size: 25px;
   font-weight: 600;
   text-decoration: underline;
   padding: 20px 0;
+}
+
+.nav .create {
+  color: #000;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 20px 0;
+}
+
+.nav .create:hover {
+  color: #000;
+  text-decoration: underline;
 }
 
 /* ........... Tablet ..............*/
