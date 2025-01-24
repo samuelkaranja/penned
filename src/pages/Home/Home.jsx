@@ -4,7 +4,9 @@ import "./home.css";
 import { GlobalContext } from "../../context/context";
 
 const Home = () => {
-  const { filteredPosts } = useContext(GlobalContext);
+  const { isLoading, filteredPosts } = useContext(GlobalContext);
+
+  if (isLoading) return <h2 className="loading">Fetching blogs....</h2>;
 
   return (
     <div className="home">

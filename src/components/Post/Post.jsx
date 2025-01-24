@@ -10,7 +10,13 @@ const Post = ({ blog }) => {
       <img src={blog?.image} alt="" />
       <div className="body">
         <div className="dl">
-          <small>{blog?.date_published}</small>
+          <small>
+            {new Date(blog?.created_at).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </small>
           <small>
             <CiHeart />
           </small>

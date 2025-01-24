@@ -26,7 +26,14 @@ const PostDetails = () => {
         <div className="author">
           <div className="name">
             <small>Author: {blogdetails?.author}</small>
-            <small>Published: {blogdetails?.date_published}</small>
+            <small>
+              Published:{" "}
+              {new Date(blogdetails?.created_at).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </small>
           </div>
           <div className="social">
             <ul>
