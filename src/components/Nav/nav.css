@@ -33,6 +33,25 @@
   text-decoration: underline;
 }
 
+.nav .login {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #030712;
+  padding: 8px 15px;
+  margin: 0 10px;
+}
+
+.nav .signup {
+  background: #030712;
+  border: 1px solid #030712;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #f9fafb;
+  padding: 8px 15px;
+}
+
 /* ........... Tablet ..............*/
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {
