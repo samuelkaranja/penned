@@ -15,8 +15,14 @@ const Nav = () => {
         <Link to="/create-post" className="create">
           Create Post
         </Link>
-        <button className="login">Login</button>
-        <button className="signup">SignUp</button>
+
+        <Link to="/login" className="login">
+          Login
+        </Link>
+
+        <Link to="/sign-up" className="signup">
+          SignUp
+        </Link>
       </div>
     </div>
   );

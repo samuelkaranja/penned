@@ -8,6 +8,7 @@ const GlobalState = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Fetch posts
+
   const fetchPosts = async () => {
     setIsLoading(true);
     try {
@@ -25,11 +26,13 @@ const GlobalState = ({ children }) => {
   }, []);
 
   // Filter posts
+
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchText.toLowerCase())
   );
 
-  //Delete post
+  // Delete post
+
   const handleDelete = async (blogId) => {
     try {
       const response = await fetch(
