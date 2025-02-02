@@ -1,0 +1,31 @@
+.register .frm {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.register input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.register input:focus {
+  outline: none;
+  border: 1px solid lightgrey;
+}
+
+.register input::placeholder {
+  font-size: 15px;
+}
+
+.register .btn {
+  width: 100%;
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
