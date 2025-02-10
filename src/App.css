@@ -27,3 +27,24 @@
 .read-the-docs {
   color: #888;
 } */
+
+.dark-mode {
+  background: #000;
+}
+
+.dark-mode span,
+.dark-mode p,
+.dark-mode small,
+.dark-mode .post .body .title,
+.dark-mode .nav .logo,
+.dark-mode .nav .create,
+.dark-mode svg,
+.dark-mode h2,
+.dark-mode .postdetails .more .header .subtitle,
+.dark-mode .postdetails .more .details p {
+  color: #fff;
+}
+
+.dark-mode .search .search-icons {
+  color: #000;
+}

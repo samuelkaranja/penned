@@ -6,6 +6,7 @@ const GlobalState = ({ children }) => {
   const [searchText, setSearchText] = useState("");
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   // Fetch posts
 
@@ -53,6 +54,12 @@ const GlobalState = ({ children }) => {
     }
   };
 
+  // DarkMode
+
+  const handleDarkMode = () => {
+    setDarkMode((prevDarkMode) => !prevDarkMode);
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -62,6 +69,8 @@ const GlobalState = ({ children }) => {
         filteredPosts,
         setPosts,
         handleDelete,
+        darkMode,
+        handleDarkMode,
       }}
     >
       {children}

@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import { Comments } from "../../components";
 
 const PostDetails = () => {
   const { title } = useParams();
@@ -58,6 +59,9 @@ const PostDetails = () => {
         <div className="details">
           <p>{blogdetails?.description}</p>
         </div>
+      </div>
+      <div className="feedback">
+        <Comments />
       </div>
     </div>
   );

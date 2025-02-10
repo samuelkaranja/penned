@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
-import { FaPenFancy } from "react-icons/fa";
+import { FaMoon, FaPenFancy, FaSun } from "react-icons/fa";
 import "./nav.css";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/context";
 
 const Nav = () => {
+  const { darkMode, handleDarkMode } = useContext(GlobalContext);
+
   return (
     <div className="nav">
       <div className="nav__logo">
@@ -11,7 +15,14 @@ const Nav = () => {
           penned
         </Link>
       </div>
+
       <div className="nav_links">
+        {darkMode ? (
+          <FaSun onClick={handleDarkMode} />
+        ) : (
+          <FaMoon onClick={handleDarkMode} />
+        )}
+
         <Link to="/create-post" className="create">
           Create Post
         </Link>
