@@ -24,7 +24,7 @@ const GlobalState = ({ children }) => {
 
   useEffect(() => {
     fetchPosts();
-  }, []);
+  }, []); // calls the fetchPosts function everytime the page re-renders
 
   // Filter posts
 
