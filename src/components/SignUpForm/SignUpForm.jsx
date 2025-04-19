@@ -1,0 +1,96 @@
+import React from "react";
+import "./signupform.css";
+import { useForm } from "react-hook-form";
+
+const SignUpForm = ({ onSubmit }) => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const internalSubmit = (data) => {
+    onSubmit(data, reset);
+  };
+
+  return (
+    <div className="signupform">
+      <form onSubmit={handleSubmit(internalSubmit)}>
+        <div className="frm">
+          <label htmlFor="fullname">Full Name</label>
+          <input
+            {...register("fullname", { required: "Full Name is required" })}
+            type="text"
+            name="fullname"
+            id="fullname"
+            placeholder="John Doe"
+          />
+          {errors.fullname && (
+            <p className="alert">{errors.fullname.message}</p>
+          )}
+        </div>
+        <div className="frm">
+          <label htmlFor="username">Username</label>
+          <input
+            {...register("username", { required: "Username is required" })}
+            type="text"
+            name="username"
+            id="username"
+            placeholder="johndoe28"
+          />
+          {errors.username && (
+            <p className="alert">{errors.username.message}</p>
+          )}
+        </div>
+        <div className="frm">
+          <label htmlFor="email">Email</label>
+          <input
+            {...register("email", { required: "Email is required" })}
+            type="email"
+            name="email"
+            id="email"
+            placeholder="johndoe@gmail.com"
+          />
+          {errors.email && <p className="alert">{errors.email.message}</p>}
+        </div>
+        <div className="frm">
+          <label htmlFor="password">Password</label>
+          <input
+            {...register("password", { required: "Password is required" })}
+            type="password"
+            name="password"
+            id="password"
+            placeholder="**********"
+          />
+          {errors.password && (
+            <p className="alert">{errors.password.message}</p>
+          )}
+        </div>
+        <div className="frm">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            {...register("confirmPassword", {
+              required: "Confirm password is required",
+              validate: (value) =>
+                value === watch("password") || "Passwords do not match",
+            })}
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="**********"
+          />
+          {errors.confirmPassword && (
+            <p className="alert">{errors.confirmPassword.message}</p>
+          )}
+        </div>
+        <button type="submit">
+          {isSubmitting ? "Creating Account....." : "Submit"}
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default SignUpForm;

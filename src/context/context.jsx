@@ -8,6 +8,15 @@ const GlobalState = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  // Authentication states
+  const [accessToken, setAccessToken] = useState(
+    localStorage.getItem("access_token") || ""
+  );
+  const [refreshToken, setRefreshToken] = useState(
+    localStorage.getItem("refresh_token") || ""
+  );
+  const [user, setUser] = useState(null);
+
   // Fetch posts
 
   const fetchPosts = async () => {
@@ -60,6 +69,24 @@ const GlobalState = ({ children }) => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
+  // Handle Login (store tokens and user info)
+  const handleLogin = (data) => {
+    setAccessToken(data.access);
+    setRefreshToken(data.refresh);
+    setUser(data.user); // Assuming your API returns user data
+    localStorage.setItem("access_token", data.access);
+    localStorage.setItem("refresh_token", data.refresh);
+  };
+
+  // Handle Logout (clear user info and tokens)
+  const handleLogout = () => {
+    setAccessToken("");
+    setRefreshToken("");
+    setUser(null);
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("refresh_token");
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -71,6 +98,8 @@ const GlobalState = ({ children }) => {
         handleDelete,
         darkMode,
         handleDarkMode,
+        handleLogin,
+        handleLogout,
       }}
     >
       {children}
