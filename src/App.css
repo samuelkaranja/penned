@@ -29,15 +29,18 @@
 } */
 
 .dark-mode {
-  background: #000;
+  background: #242424;
 }
 
 .dark-mode span,
 .dark-mode p,
 .dark-mode small,
 .dark-mode .post .body .title,
+.dark-mode .home h2,
+.dark-mode .nav .pen,
 .dark-mode .nav .logo,
 .dark-mode .nav .create,
+.dark-mode .addpost label,
 .dark-mode svg,
 .dark-mode h2,
 .dark-mode .postdetails .more .header .subtitle,

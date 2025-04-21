@@ -7,10 +7,14 @@
   align-items: center;
 }
 
+.nav .pen {
+  color: #000;
+}
+
 .nav svg {
-  font-size: 17px;
-  padding-top: 5px;
-  padding-right: 4px;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-right: 10px;
 }
 
 .nav .logo {

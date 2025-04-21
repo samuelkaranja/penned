@@ -14,9 +14,9 @@ label {
   color: #000;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.loginform input[type="text"],
+.loginform input[type="email"],
+.loginform input[type="password"] {
   display: block;
   width: 350px;
   padding: 6px 12px;

@@ -6,7 +6,7 @@ const Home = () => {
     <div className="home">
       <Banner />
       <div className="archive">
-        <h2>Posts</h2>
+        <h2>Blog Posts</h2>
         <Search />
         <PostList />
       </div>

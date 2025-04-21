@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className="nav__logo">
-        <FaPenFancy />
+        <FaPenFancy className="pen" />
         <Link to="/" className="logo">
           penned
         </Link>
@@ -20,7 +20,7 @@ const Nav = () => {
         {darkMode ? (
           <FaSun onClick={handleDarkMode} />
         ) : (
-          <FaMoon onClick={handleDarkMode} />
+          <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
         )}
 
         <Link to="/create-post" className="create">

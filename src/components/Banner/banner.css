@@ -3,6 +3,7 @@
   display: grid;
   place-items: center;
   text-align: center;
+  color: #000;
 }
 
 .banner .banner-text {

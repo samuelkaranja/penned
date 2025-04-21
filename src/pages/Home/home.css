@@ -3,6 +3,15 @@
   margin: 0 auto;
 }
 
+.home h2 {
+  color: #000;
+  text-decoration: underline;
+}
+
+.home .archive {
+  margin-top: 70px;
+}
+
 /* ........... Tablet ..............*/
 
 @media only screen and (min-width: 426px) and (max-width: 768px) {

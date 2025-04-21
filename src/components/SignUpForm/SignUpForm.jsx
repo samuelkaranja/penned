@@ -89,7 +89,9 @@ const SignUpForm = ({ onSubmit }) => {
           {isSubmitting ? "Creating Account....." : "Submit"}
         </button>
       </form>
-      <p style={{textAlign: "center", fontSize: "15px"}}>Already have an account <a href="">Login<a/></p>
+      {/* <p style={{ textAlign: "center", fontSize: "15px" }}>
+        Already have an account <a href="">Login</a>
+      </p> */}
     </div>
   );
 };
