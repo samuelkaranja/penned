@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import PostDetails from "./pages/PostDetails/PostDetails";
-//import { Footer } from "./components";
+import { Footer } from "./components";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import { Login, SignUp } from "./pages";
 import { useContext } from "react";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );

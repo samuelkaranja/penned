@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "./addpost.css";
 import { GlobalContext } from "../../context/context";
+import { useForm } from "react-hook-form";
 
 const AddPost = () => {
   const { setPosts } = useContext(GlobalContext);
@@ -14,6 +15,12 @@ const AddPost = () => {
 
   const [successMessage, setSuccessMessage] = useState("");
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   //Handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -24,8 +31,8 @@ const AddPost = () => {
     setFormData({ ...formData, image: e.target.files[0] });
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handlePostSubmit = async (event) => {
+    // event.preventDefault();
 
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => {
@@ -70,52 +77,117 @@ const AddPost = () => {
     <div className="addpost">
       {successMessage && <p className="success">{successMessage}</p>}
       <div className="frm">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(handlePostSubmit)}>
           <div>
             <label>Title:</label>
             <input
+              {...register("title", { required: true })}
               type="text"
               name="title"
               value={formData.title}
               onChange={handleChange}
             />
+            {errors.title && errors.title.type === "required" ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "13px",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                Titile required
+              </p>
+            ) : null}
           </div>
           <div>
             <label>SubTitle:</label>
             <input
+              {...register("subtitle", { required: true })}
               type="text"
               name="subtitle"
               value={formData.subtitle}
               onChange={handleChange}
             />
+            {errors.subtitle && errors.subtitle.type === "required" ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "13px",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                Subtitle required
+              </p>
+            ) : null}
           </div>
           <div>
             <label>Image:</label>
             <input
+              {...register("image", { required: true })}
               type="file"
               name="image"
               accept="image/*"
               onChange={handleFileChange}
             />
+            {errors.image && errors.image.type === "required" ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "13px",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                Image required
+              </p>
+            ) : null}
           </div>
           <div>
             <label>Description:</label>
             <textarea
+              {...register("description", { required: true })}
               cols="30"
               rows="10"
               name="description"
               value={formData.description}
               onChange={handleChange}
             ></textarea>
+            {errors.description && errors.description.type === "required" ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "13px",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                Description required
+              </p>
+            ) : null}
           </div>
           <div>
             <label>Author:</label>
             <input
+              {...register("author", { required: true })}
               type="text"
               name="author"
               value={formData.author}
               onChange={handleChange}
             />
+            {errors.author && errors.author.type === "required" ? (
+              <p
+                style={{
+                  color: "red",
+                  fontSize: "13px",
+                  margin: 0,
+                  textAlign: "left",
+                }}
+              >
+                Author required
+              </p>
+            ) : null}
           </div>
 
           <button type="submit" className="post_btn">
