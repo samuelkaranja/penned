@@ -8,6 +8,8 @@ import CreatePost from "./pages/CreatePost/CreatePost";
 import { Login, SignUp } from "./pages";
 import { useContext } from "react";
 import { GlobalContext } from "./context/context";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { darkMode } = useContext(GlobalContext);
@@ -23,6 +25,17 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         <Footer />
       </Router>
     </div>

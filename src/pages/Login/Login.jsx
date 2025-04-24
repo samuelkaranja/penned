@@ -4,6 +4,7 @@ import "./login.css";
 import { GlobalContext } from "../../context/context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { handleLogin } = useContext(GlobalContext);
@@ -21,11 +22,11 @@ const Login = () => {
 
       // Pass login data to global context
       handleLogin({ access, refresh, user });
-      alert("Login successful");
+      toast.success("Logged In successful!!");
       navigate("/");
     } catch (error) {
       console.error("Login failed", error);
-      alert("Login failed");
+      toast.error("Login failed. Please check your credentials.");
     }
   };
 

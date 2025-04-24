@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
+//import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext();
 
@@ -7,6 +9,8 @@ const GlobalState = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
+  //const navigate = useNavigate();
 
   // Authentication states
   const [accessToken, setAccessToken] = useState(
@@ -85,6 +89,8 @@ const GlobalState = ({ children }) => {
     setUser(null);
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
+    window.location.href = "/login"; // Redirect to login page
+    toast.success("Logged out successfully!!");
   };
 
   return (
@@ -100,6 +106,7 @@ const GlobalState = ({ children }) => {
         handleDarkMode,
         handleLogin,
         handleLogout,
+        user,
       }}
     >
       {children}

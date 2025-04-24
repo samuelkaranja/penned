@@ -13,8 +13,7 @@
 
 .nav svg {
   font-size: 14px;
-  margin-top: 12px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .nav .logo {
@@ -54,6 +53,24 @@
   font-size: 15px;
   color: #f9fafb;
   padding: 8px 15px;
+}
+
+.nav .logged-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .logout {
+  background: orangered;
+  width: 80px;
+  margin-left: 20px;
+  border: 1px solid none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  padding: 8px;
 }
 
 /* ........... Tablet ..............*/

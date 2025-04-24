@@ -5,7 +5,8 @@ import { useContext } from "react";
 import { GlobalContext } from "../../context/context";
 
 const Nav = () => {
-  const { darkMode, handleDarkMode } = useContext(GlobalContext);
+  const { darkMode, handleDarkMode, handleLogout, user } =
+    useContext(GlobalContext);
 
   return (
     <div className="nav">
@@ -17,13 +18,46 @@ const Nav = () => {
       </div>
 
       <div className="nav_links">
-        {darkMode ? (
+        {/* {darkMode ? (
           <FaSun onClick={handleDarkMode} />
         ) : (
           <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
+        )} */}
+
+        {!user ? (
+          <>
+            {darkMode ? (
+              <FaSun onClick={handleDarkMode} />
+            ) : (
+              <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
+            )}
+            <Link to="/login" className="login">
+              Login
+            </Link>
+
+            <Link to="/sign-up" className="signup">
+              SignUp
+            </Link>
+          </>
+        ) : (
+          <div className="logged-in">
+            {darkMode ? (
+              <FaSun onClick={handleDarkMode} />
+            ) : (
+              <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
+            )}
+
+            <Link to="/create-post" className="create">
+              Create Post
+            </Link>
+
+            <button onClick={handleLogout} className="logout">
+              Logout
+            </button>
+          </div>
         )}
 
-        <Link to="/create-post" className="create">
+        {/* <Link to="/create-post" className="create">
           Create Post
         </Link>
 
@@ -33,7 +67,7 @@ const Nav = () => {
 
         <Link to="/sign-up" className="signup">
           SignUp
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
