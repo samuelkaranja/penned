@@ -1,6 +1,7 @@
 .signupform {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  height: 60vh;
 }
 
 .frm {
@@ -51,4 +52,20 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+.option {
+  margin-top: 20px;
+}
+
+.option span {
+  color: #000;
+  padding-right: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.option a {
+  color: blue;
+  text-decoration: underline;
 }

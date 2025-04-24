@@ -1,6 +1,7 @@
 import React from "react";
 import "./signupform.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const SignUpForm = ({ onSubmit }) => {
   const {
@@ -89,9 +90,10 @@ const SignUpForm = ({ onSubmit }) => {
           {isSubmitting ? "Creating Account....." : "Submit"}
         </button>
       </form>
-      {/* <p style={{ textAlign: "center", fontSize: "15px" }}>
-        Already have an account <a href="">Login</a>
-      </p> */}
+      <div className="option">
+        <span>Already have an Account?</span>
+        <Link to={"/login"}>Login</Link>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,11 @@
 .loginform {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+}
+
+.loginform form {
+  display: inline-block;
+  text-align: left; /* keeps the text inside left-aligned */
+  margin: 20px 0;
 }
 
 .frm {
@@ -51,4 +56,16 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+.signup-link {
+  margin-bottom: 200px;
+}
+
+.signup-link span {
+  color: #000;
+}
+
+.signup-link a {
+  text-decoration: underline;
 }

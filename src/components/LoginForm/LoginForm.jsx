@@ -1,6 +1,7 @@
 import React from "react";
 import "./loginform.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ onSubmit }) => {
   const {
@@ -37,6 +38,10 @@ const LoginForm = ({ onSubmit }) => {
         </div>
         <button type="submit">Submit</button>
       </form>
+      <div className="signup-link">
+        <span>Don't have an account? </span>
+        <Link to="/sign-up">Sign Up</Link>
+      </div>
     </div>
   );
 };
