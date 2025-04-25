@@ -86,9 +86,7 @@ const SignUpForm = ({ onSubmit }) => {
             <p className="alert">{errors.confirmPassword.message}</p>
           )}
         </div>
-        <button type="submit">
-          {isSubmitting ? "Creating Account....." : "Submit"}
-        </button>
+        <button type="submit">Create Account</button>
       </form>
       <div className="option">
         <span>Already have an Account?</span>

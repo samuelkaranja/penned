@@ -1,6 +1,4 @@
 import { createContext, useState, useEffect } from "react";
-import { toast } from "react-toastify";
-//import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext();
 
@@ -10,16 +8,23 @@ const GlobalState = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  //const navigate = useNavigate();
-
   // Authentication states
-  const [accessToken, setAccessToken] = useState(
-    localStorage.getItem("access_token") || ""
-  );
-  const [refreshToken, setRefreshToken] = useState(
-    localStorage.getItem("refresh_token") || ""
-  );
+  const [accessToken, setAccessToken] = useState("");
+  const [refreshToken, setRefreshToken] = useState("");
   const [user, setUser] = useState(null);
+
+  // Rehydrate tokens and user from localStorage on app start
+  useEffect(() => {
+    const storedAccess = localStorage.getItem("access_token");
+    const storedRefresh = localStorage.getItem("refresh_token");
+    const storedUser = localStorage.getItem("user");
+
+    if (storedAccess && storedRefresh && storedUser) {
+      setAccessToken(storedAccess);
+      setRefreshToken(storedRefresh);
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   // Fetch posts
 
@@ -78,8 +83,10 @@ const GlobalState = ({ children }) => {
     setAccessToken(data.access);
     setRefreshToken(data.refresh);
     setUser(data.user); // Assuming your API returns user data
+
     localStorage.setItem("access_token", data.access);
     localStorage.setItem("refresh_token", data.refresh);
+    localStorage.setItem("user", JSON.stringify(data.user));
   };
 
   // Handle Logout (clear user info and tokens)
@@ -87,10 +94,12 @@ const GlobalState = ({ children }) => {
     setAccessToken("");
     setRefreshToken("");
     setUser(null);
+
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
+    localStorage.removeItem("user");
+
     window.location.href = "/login"; // Redirect to login page
-    toast.success("Logged out successfully!!");
   };
 
   return (
@@ -106,6 +115,7 @@ const GlobalState = ({ children }) => {
         handleDarkMode,
         handleLogin,
         handleLogout,
+        accessToken,
         user,
       }}
     >

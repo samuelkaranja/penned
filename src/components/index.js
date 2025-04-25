@@ -8,4 +8,5 @@ export { default as Post } from "./Post/Post";
 export { default as AddPost } from "./AddPost/AddPost";
 export { default as Comments } from "./Comments/Comments";
 export { default as Register } from "./Register/Register";
+export { default as ProfileInfo } from "./ProfileInfo/ProfileInfo";
 export { default as Footer } from "./Footer/Footer";

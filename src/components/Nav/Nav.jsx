@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../../context/context";
 
 const Nav = () => {
-  const { darkMode, handleDarkMode, handleLogout, user } =
+  const { darkMode, handleDarkMode, handleLogout, user, accessToken } =
     useContext(GlobalContext);
 
   return (
@@ -24,13 +24,8 @@ const Nav = () => {
           <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
         )} */}
 
-        {!user ? (
+        {!accessToken ? (
           <>
-            {darkMode ? (
-              <FaSun onClick={handleDarkMode} />
-            ) : (
-              <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
-            )}
             <Link to="/login" className="login">
               Login
             </Link>
@@ -41,11 +36,11 @@ const Nav = () => {
           </>
         ) : (
           <div className="logged-in">
-            {darkMode ? (
-              <FaSun onClick={handleDarkMode} />
-            ) : (
-              <FaMoon onClick={handleDarkMode} style={{ color: "#000" }} />
-            )}
+            <span
+              style={{ color: "#000", fontSize: "14px", paddingRight: "10px" }}
+            >
+              Welcome, <Link to="/profile">{user.username}</Link>
+            </span>
 
             <Link to="/create-post" className="create">
               Create Post
