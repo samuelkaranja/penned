@@ -27,7 +27,11 @@ const Post = ({ blog }) => {
         <Link to={`/details/${slug}`} className="title">
           {blog?.title}
         </Link>
-        <p className="subtitle">{blog?.subtitle}</p>
+        <p className="subtitle">
+          {blog?.subtitle.length > 50
+            ? blog?.subtitle.slice(0, 80) + "..."
+            : blog?.subtitle}
+        </p>
         <small className="author">author: {blog?.author}</small>
       </div>
       {/* <button

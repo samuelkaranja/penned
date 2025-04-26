@@ -2,9 +2,14 @@ import { useContext, useState } from "react";
 import "./addpost.css";
 import { GlobalContext } from "../../context/context";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
-  const { setPosts } = useContext(GlobalContext);
+  const { setPosts, user } = useContext(GlobalContext);
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     subtitle: "",
@@ -12,8 +17,6 @@ const AddPost = () => {
     description: "",
     author: "",
   });
-
-  const [successMessage, setSuccessMessage] = useState("");
 
   const {
     register,
@@ -33,9 +36,10 @@ const AddPost = () => {
 
   const handlePostSubmit = async (event) => {
     // event.preventDefault();
+    const updatedFormData = { ...formData, author: user?.fullname };
 
     const data = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
+    Object.entries(updatedFormData).forEach(([key, value]) => {
       data.append(key, value);
     });
 
@@ -51,7 +55,7 @@ const AddPost = () => {
 
       const newBlog = await response.json();
       console.log("Blog created:", newBlog);
-      setSuccessMessage("Blog created successfully");
+      toast.success("Blog created successfully");
 
       // Update the context with the new blog
       setPosts((prevPosts) => [...prevPosts, newBlog]);
@@ -65,17 +69,14 @@ const AddPost = () => {
         author: "",
       });
 
-      setTimeout(() => {
-        setSuccessMessage("");
-      }, 5000);
+      navigate("/");
     } catch (error) {
-      console.error("Error:", error);
+      toast.error("Failed to create blog", error);
     }
   };
 
   return (
     <div className="addpost">
-      {successMessage && <p className="success">{successMessage}</p>}
       <div className="frm">
         <form onSubmit={handleSubmit(handlePostSubmit)}>
           <div>
@@ -167,7 +168,7 @@ const AddPost = () => {
               </p>
             ) : null}
           </div>
-          <div>
+          {/* <div>
             <label>Author:</label>
             <input
               {...register("author", { required: true })}
@@ -188,7 +189,7 @@ const AddPost = () => {
                 Author required
               </p>
             ) : null}
-          </div>
+          </div> */}
 
           <button type="submit" className="post_btn">
             Add Post
