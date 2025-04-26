@@ -30,7 +30,7 @@ const Post = ({ blog }) => {
         <p className="subtitle">{blog?.subtitle}</p>
         <small className="author">author: {blog?.author}</small>
       </div>
-      <button
+      {/* <button
         onClick={() => handleDelete(blog.id)}
         style={{
           background: "red",
@@ -42,7 +42,7 @@ const Post = ({ blog }) => {
         }}
       >
         Delete
-      </button>
+      </button> */}
     </div>
   );
 };

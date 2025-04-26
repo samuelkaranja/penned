@@ -7,11 +7,13 @@ const GlobalState = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  console.log(posts);
 
   // Authentication states
   const [accessToken, setAccessToken] = useState("");
   const [refreshToken, setRefreshToken] = useState("");
   const [user, setUser] = useState(null);
+  console.log(user);
 
   // Rehydrate tokens and user from localStorage on app start
   useEffect(() => {
@@ -40,7 +42,7 @@ const GlobalState = ({ children }) => {
         setIsLoading(false);
       } catch (error) {
         console.log(error, "Server not ready. Retrying in 2s...");
-        setTimeout(tryFetch, 3000); // Keep retrying every 2 seconds until backend is up
+        setTimeout(tryFetch, 3000); // Keeps retrying every 2 seconds to fetch posts until backend is up
       }
     };
     tryFetch();
