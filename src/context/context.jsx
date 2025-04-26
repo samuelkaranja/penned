@@ -30,14 +30,20 @@ const GlobalState = ({ children }) => {
 
   const fetchPosts = async () => {
     setIsLoading(true);
-    try {
-      const res = await fetch("http://127.0.0.1:8000/api/blogs/");
-      const data = await res.json();
-      setPosts(data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
+
+    const tryFetch = async () => {
+      try {
+        const res = await fetch("http://127.0.0.1:8000/api/blogs/");
+        if (!res.ok) throw new Error("Server error");
+        const data = await res.json();
+        setPosts(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error, "Server not ready. Retrying in 2s...");
+        setTimeout(tryFetch, 3000); // Keep retrying every 2 seconds until backend is up
+      }
+    };
+    tryFetch();
   };
 
   useEffect(() => {
