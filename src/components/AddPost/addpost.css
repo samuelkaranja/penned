@@ -30,19 +30,19 @@
   border: 1px solid lightgrey;
 }
 
-.addpost textarea {
+/* .addpost textarea {
   width: 100%;
   padding: 10px 20px;
   border: 1px solid lightgrey;
   border-radius: 5px;
   font-family: "Helvetica", Arial, sans-serif;
   line-height: 1.5;
-}
+} */
 
-.addpost textarea:focus {
+/* .addpost textarea:focus {
   outline: none;
   border: 1px solid lightgrey;
-}
+} */
 
 .addpost .post_btn {
   display: block;

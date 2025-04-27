@@ -107,7 +107,7 @@ const GlobalState = ({ children }) => {
     localStorage.removeItem("refresh_token");
     localStorage.removeItem("user");
 
-    window.location.href = "/login"; // Redirect to login page
+    window.location.href = "/"; // Redirect to login page
   };
 
   return (

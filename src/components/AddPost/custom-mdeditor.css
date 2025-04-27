@@ -1,0 +1,45 @@
+/* Clean the outer editor box */
+.w-md-editor {
+  border: 1px solid #ccc !important;
+  border-radius: 4px;
+  box-shadow: none !important;
+  background: white !important;
+}
+
+/* Shrink padding/margin inside the editor */
+.w-md-editor-content {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Style the textarea (where you type) */
+/* Ensure content area inside editor is styled correctly */
+/* .w-md-editor-text-input {
+  padding: 10px 12px !important;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #ccc !important;
+  min-height: 150px !important;
+  max-height: auto !important; /* Allow for auto height */
+  background: #fff !important; /* Ensure background is white */
+  color: #333 !important; /* Make sure the text color is visible */
+  resize: vertical !important; /* Allow vertical resizing */
+} */
+
+/* Fix any hidden text or rendering issues */
+.w-md-editor-text-input {
+  padding: 10px;
+  min-height: 150px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  resize: vertical;
+}
+
+/* Keep toolbar visible and styled normally (no changes) */
+.w-md-editor-toolbar {
+  border-bottom: 1px solid #ccc;
+  background: #f9f9f9;
+}
