@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Nav from "./components/Nav/Nav";
 import PostDetails from "./pages/PostDetails/PostDetails";
@@ -25,6 +30,9 @@ function App() {
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+
+          {/* Catch-all route for non-existent URLs */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <ToastContainer
           position="top-center"

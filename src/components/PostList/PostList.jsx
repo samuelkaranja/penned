@@ -3,19 +3,22 @@ import "./postlist.css";
 import { GlobalContext } from "../../context/context";
 import Post from "../Post/Post";
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 3;
 
 const PostList = () => {
   const { isLoading, filteredPosts } = useContext(GlobalContext);
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPosts = filteredPosts.length;
+  // Sort posts by ID in descending order (newest first)
+  const sortedPosts = [...filteredPosts].sort((a, b) => b.id - a.id);
+
+  const totalPosts = sortedPosts.length;
   const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE);
 
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const endIndex = startIndex + POSTS_PER_PAGE;
-  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+  const currentPosts = sortedPosts.slice(startIndex, endIndex);
 
   const goToPage = (page) => {
     if (page >= 1 && page <= totalPages) {
@@ -34,6 +37,7 @@ const PostList = () => {
           <h2>No posts available!!</h2>
         )}
       </div>
+
       {/* Pagination Controls */}
       {totalPages > 1 && (
         <div className="pagination">
