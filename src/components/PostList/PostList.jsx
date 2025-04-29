@@ -3,7 +3,7 @@ import "./postlist.css";
 import { GlobalContext } from "../../context/context";
 import Post from "../Post/Post";
 
-const POSTS_PER_PAGE = 3;
+const POSTS_PER_PAGE = 6;
 
 const PostList = () => {
   const { isLoading, filteredPosts } = useContext(GlobalContext);
