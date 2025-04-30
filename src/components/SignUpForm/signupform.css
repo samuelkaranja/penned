@@ -33,7 +33,7 @@ input:focus {
   outline: none;
 }
 
-button {
+.signupform button {
   width: 100%;
   background-color: green;
   border: none;

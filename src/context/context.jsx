@@ -42,7 +42,7 @@ const GlobalState = ({ children }) => {
         setIsLoading(false);
       } catch (error) {
         console.log(error, "Server not ready. Retrying in 2s...");
-        setTimeout(tryFetch, 3000); // Keeps retrying every 2 seconds to fetch posts until backend is up
+        setTimeout(tryFetch, 7000); // Keeps retrying every 2 seconds to fetch posts until backend is up
       }
     };
     tryFetch();
