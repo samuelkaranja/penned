@@ -13,12 +13,8 @@ const Tabs = () => {
   return (
     <div className="tabs">
       <div className="tabs_btns">
-        <button onClick={() => handleTabClick("AuthorDetails")}>
-          Author Details
-        </button>
-        <button onClick={() => handleTabClick("AuthorPosts")}>
-          Author Posts
-        </button>
+        <button onClick={() => handleTabClick("AuthorDetails")}>Details</button>
+        <button onClick={() => handleTabClick("AuthorPosts")}>Posts</button>
       </div>
       <div>
         {activeTab === "AuthorDetails" && <AuthorDetails />}

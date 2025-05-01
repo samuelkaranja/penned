@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 import "./authordetails.css";
+import { GlobalContext } from "../../context/context";
 
 const AuthorDetails = () => {
+  const { setUser } = useContext(GlobalContext);
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -26,11 +30,11 @@ const AuthorDetails = () => {
       })
       .then((res) => {
         setFormData({
+          fullname: res.data.fullname,
           username: res.data.username,
           email: res.data.email,
-          fullname: res.data.fullname,
-          about: res.data.about,
           image: null,
+          about: res.data.about,
         });
         setPreviewImage(res.data.image);
       })
@@ -68,11 +72,13 @@ const AuthorDetails = () => {
         },
       })
       .then((res) => {
-        alert("Profile updated successfully!");
+        toast.success("Profile updated successfully!");
+        setUser(res.data); // Update global context
+        localStorage.setItem("user", JSON.stringify(res.data)); // Update localStorage
       })
       .catch((err) => {
         console.error(err);
-        alert("Failed to update profile.");
+        toast.error("Failed to update profile.");
       });
   };
 
@@ -123,8 +129,20 @@ const AuthorDetails = () => {
           />
           {previewImage && (
             <div>
-              <p>Preview:</p>
-              <img src={previewImage} alt="Preview" width="120" />
+              <p style={{ color: "#000", fontSize: "13px", margin: "5px 0" }}>
+                Preview:
+              </p>
+              <img
+                src={previewImage}
+                alt="Preview"
+                style={{
+                  width: "120px",
+                  height: "120px",
+                  overflow: "hidden",
+                  objectFit: "cover",
+                  borderRadius: "10%",
+                }}
+              />
             </div>
           )}
         </div>

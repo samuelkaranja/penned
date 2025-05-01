@@ -125,6 +125,7 @@ const GlobalState = ({ children }) => {
         handleLogout,
         accessToken,
         user,
+        setUser,
       }}
     >
       {children}

@@ -5,21 +5,22 @@ import { GlobalContext } from "../../context/context";
 
 const ProfileInfo = () => {
   const { user } = useContext(GlobalContext);
+  console.log("User Image Path:", user?.image);
 
   return (
     <div className="profileinfo">
       <div className="author">
         <div className="author_image">
-          <img src={Image} alt="" />
+          <img
+            src={user?.image ? `http://localhost:8000${user.image}` : Image}
+            alt=""
+          />
         </div>
         <div className="author_info">
           <span>{user?.fullname}</span>
           <span>Username: {user?.username}</span>
           <span>Email: {user?.email}</span>
-          <p>
-            Building a new startup. Founder @ycombinator.prev.Design leadership
-            @Google, avid espresso drinker
-          </p>
+          <p>{user?.about}</p>
         </div>
       </div>
       <div className="author_btns">

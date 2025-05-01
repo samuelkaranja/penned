@@ -12,10 +12,9 @@
 }
 
 .profileinfo .author .author_image {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   margin-right: 20px;
-  border: 2px solid #242424;
   border-radius: 50%;
 }
 
