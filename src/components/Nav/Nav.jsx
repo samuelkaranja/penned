@@ -3,6 +3,7 @@ import { FaMoon, FaPenFancy, FaSun } from "react-icons/fa";
 import "./nav.css";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/context";
+import Image from "../../assets/code.jpg";
 
 const Nav = () => {
   const { darkMode, handleDarkMode, handleLogout, user, accessToken } =
@@ -36,33 +37,25 @@ const Nav = () => {
           </>
         ) : (
           <div className="logged-in">
-            <span
-              style={{ color: "#000", fontSize: "14px", paddingRight: "10px" }}
-            >
-              Welcome, <Link to="/profile">{user.username}</Link>
-            </span>
-
             <Link to="/create-post" className="create">
               Create Post
             </Link>
+
+            <span className="welcome">
+              Welcome, <Link to="/profile">{user.username}</Link>
+            </span>
+
+            <img
+              src={user?.image ? `http://localhost:8000${user.image}` : Image}
+              alt={user?.username}
+              className="user-image"
+            />
 
             <button onClick={handleLogout} className="logout">
               Logout
             </button>
           </div>
         )}
-
-        {/* <Link to="/create-post" className="create">
-          Create Post
-        </Link>
-
-        <Link to="/login" className="login">
-          Login
-        </Link>
-
-        <Link to="/sign-up" className="signup">
-          SignUp
-        </Link> */}
       </div>
     </div>
   );
