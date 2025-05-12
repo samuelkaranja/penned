@@ -154,8 +154,8 @@ const AddPost = () => {
             ) : null}
           </div>
           <div>
-            <label>Description:</label>
-            <Controller
+            {/* <label>Description:</label> */}
+            {/* <Controller
               name="description"
               control={control}
               defaultValue=""
@@ -187,9 +187,11 @@ const AddPost = () => {
               >
                 {errors.description.message}
               </p>
-            )}
+            )} */}
 
-            {/* {errors.description && errors.description.type === "required" ? (
+            <label>Description:</label>
+
+            {errors.description && errors.description.type === "required" ? (
               <p
                 style={{
                   color: "red",
@@ -200,8 +202,8 @@ const AddPost = () => {
               >
                 Description required
               </p>
-            ) : null} */}
-            {/* <textarea
+            ) : null}
+            <textarea
               {...register("description", { required: true })}
               cols="30"
               rows="10"
@@ -220,7 +222,7 @@ const AddPost = () => {
               >
                 Description required
               </p>
-            ) : null} */}
+            ) : null}
           </div>
           <button type="submit" className="post_btn">
             Add Post
