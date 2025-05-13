@@ -2,6 +2,7 @@
   color: #000;
   display: flex;
   overflow: hidden;
+  background-color: #f5f7fa;
 }
 
 .dashboard .dash-nav {

@@ -1,9 +1,13 @@
-import "./style.css";
+import "./sidebar.css";
+import { FaPenFancy } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <h1 className="logo">penned</h1>
+      <h1 className="logo">
+        <FaPenFancy className="pen" />
+        penned
+      </h1>
       <nav>
         <ul>
           <li>Dashboard</li>

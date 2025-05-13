@@ -1,8 +1,6 @@
-import Gallery from "../../components/Dashboard/Gallery";
+import { Sidebar } from "../../components";
 import Header from "../../components/Dashboard/Header/Header";
-import Messages from "../../components/Dashboard/Messages";
 import PopularPosts from "../../components/Dashboard/PopularPosts/PopularPosts";
-import Sidebar from "../../components/Dashboard/Sidebar";
 import SummaryCard from "../../components/Dashboard/SummaryCard/SummaryCard";
 import UserComments from "../../components/Dashboard/UserComments/UserComments";
 import "./dashboard.css";
@@ -25,10 +23,7 @@ const Dashboard = () => {
           <PopularPosts />
           <UserComments />
         </div>
-        <div className="bottom-cards">
-          <Gallery />
-          <Messages />
-        </div>
+        <div className="bottom-cards"></div>
       </div>
     </div>
   );

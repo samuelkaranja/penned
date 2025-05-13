@@ -1,5 +1,6 @@
 export { default as Layout } from "./Layout/Layout";
 export { default as Nav } from "./Nav/Nav";
+export { default as Sidebar } from "./Dashboard/Sidebar/Sidebar";
 export { default as Banner } from "./Banner/Banner";
 export { default as Search } from "./Search/Search";
 export { default as PostList } from "./PostList/PostList";
