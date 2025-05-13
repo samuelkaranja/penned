@@ -1,7 +1,7 @@
 import ActivePosts from "../../components/Dashboard/ActivePosts";
 import Comments from "../../components/Dashboard/Comments";
 import Gallery from "../../components/Dashboard/Gallery";
-import Header from "../../components/Dashboard/Header";
+import Header from "../../components/Dashboard/Header/Header";
 import Messages from "../../components/Dashboard/Messages";
 import Sidebar from "../../components/Dashboard/Sidebar";
 import Statistics from "../../components/Dashboard/Statistics";
@@ -15,7 +15,7 @@ const Dashboard = () => {
         <Sidebar />
       </div>
       <div className="information">
-        {/* <Header /> */}
+        <Header />
         <div className="summary">
           <SummaryCard title={"Total Posts"} value={284} />
           <SummaryCard title={"Total Members"} value={24} />

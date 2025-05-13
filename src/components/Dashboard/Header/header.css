@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header input {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  background-color: #fff;
+  color: #000;
+}
