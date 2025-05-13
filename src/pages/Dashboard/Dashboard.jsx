@@ -1,11 +1,10 @@
-import ActivePosts from "../../components/Dashboard/ActivePosts";
-import Comments from "../../components/Dashboard/Comments";
 import Gallery from "../../components/Dashboard/Gallery";
 import Header from "../../components/Dashboard/Header/Header";
 import Messages from "../../components/Dashboard/Messages";
+import PopularPosts from "../../components/Dashboard/PopularPosts/PopularPosts";
 import Sidebar from "../../components/Dashboard/Sidebar";
-import Statistics from "../../components/Dashboard/Statistics";
 import SummaryCard from "../../components/Dashboard/SummaryCard/SummaryCard";
+import UserComments from "../../components/Dashboard/UserComments/UserComments";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -22,10 +21,9 @@ const Dashboard = () => {
           <SummaryCard title={"Total Comments"} value={300} />
         </div>
 
-        <div className="main-cards">
-          <ActivePosts />
-          <Statistics />
-          <Comments />
+        <div className="maincards">
+          <PopularPosts />
+          <UserComments />
         </div>
         <div className="bottom-cards">
           <Gallery />

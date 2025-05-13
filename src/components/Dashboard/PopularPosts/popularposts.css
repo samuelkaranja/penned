@@ -1,0 +1,53 @@
+.popular {
+  padding: 20px;
+  width: 100%;
+}
+
+.popular .head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.popular .post-card {
+  display: flex;
+  border-radius: 10px;
+  padding: 10px 10px 0 10px;
+  margin: 10px 0;
+  background-color: #fff;
+}
+
+.popular .post-card .image {
+  margin-right: 20px;
+}
+
+.popular .post-card .image img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.popular .post-card .title {
+  display: block;
+  color: blue;
+  font-size: 16px;
+  padding-bottom: 2px;
+}
+
+.popular .post-card .subtitle {
+  display: block;
+  font-size: 14px;
+}
+
+.popular .post-card .title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popular .post-card .views,
+.popular .post-card .comments {
+  padding-right: 10px;
+  font-size: 14px;
+  color: gray;
+}

@@ -1,0 +1,55 @@
+.usercomments {
+  width: 40%;
+  margin-top: 20px;
+}
+
+.usercomments .head {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.usercomments .details {
+  display: flex;
+  background-color: #fff;
+  margin-top: 8px;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+.usercomments .user-image {
+  margin-right: 20px;
+}
+
+.usercomments .user-image img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.usercomments .user-details .name {
+  display: block;
+  font-size: 13px;
+}
+
+.usercomments .user-details .comment {
+  font-size: 15px;
+}
+
+.usercomments .user-details .more {
+  display: flex;
+  margin-top: 10px;
+}
+
+.usercomments .user-details .more .view {
+  background: none;
+  color: grey;
+  font-size: 13px;
+}
+
+.usercomments .user-details .more .choice {
+  background: none;
+  color: darkgreen;
+  font-size: 13px;
+}
