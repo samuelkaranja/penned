@@ -16,6 +16,12 @@
   flex: 1;
 }
 
+.dashboard .summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
   .dashboard .information {
     margin-left: 0;

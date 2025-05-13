@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <header className="dashboard-header">
       <div className="greeting">
-        <h2>Hello, Emma!</h2>
-        <p>What are you writing today?</p>
+        <h2>Hello, Samuel!</h2>
+        <p>Welcome Back!</p>
       </div>
       <div className="controls">
         <select>

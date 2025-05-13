@@ -1,0 +1,21 @@
+.summarycard {
+  height: 11vh;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #fff;
+  text-align: right;
+  margin: 10px 20px;
+}
+
+.summarycard h4 {
+  margin: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.summarycard h3 {
+  margin: 3px;
+  font-size: 18px;
+  font-weight: 800;
+}

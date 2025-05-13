@@ -8,6 +8,27 @@ const posts = [
     date: "13th Oct 2017",
     image: "/img2.jpg",
   },
+  {
+    title: "The latest photo session of my friend’s collection...",
+    likes: 6348,
+    views: 4243,
+    date: "13th Oct 2017",
+    image: "/img2.jpg",
+  },
+  {
+    title: "The latest photo session of my friend’s collection...",
+    likes: 6348,
+    views: 4243,
+    date: "13th Oct 2017",
+    image: "/img2.jpg",
+  },
+  {
+    title: "The latest photo session of my friend’s collection...",
+    likes: 6348,
+    views: 4243,
+    date: "13th Oct 2017",
+    image: "/img2.jpg",
+  },
 ];
 
 const ActivePosts = () => {
