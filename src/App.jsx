@@ -10,7 +10,7 @@ import Nav from "./components/Nav/Nav";
 import PostDetails from "./pages/PostDetails/PostDetails";
 import { Footer } from "./components";
 import CreatePost from "./pages/CreatePost/CreatePost";
-import { Login, Profile, SignUp } from "./pages";
+import { Dashboard, Login, Profile, SignUp } from "./pages";
 import { useContext } from "react";
 import { GlobalContext } from "./context/context";
 import { ToastContainer } from "react-toastify";
@@ -28,6 +28,7 @@ function App() {
           <Route path="/details/:title" element={<PostDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
 
