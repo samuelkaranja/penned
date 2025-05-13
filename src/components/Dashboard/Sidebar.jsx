@@ -3,7 +3,7 @@ import "./style.css";
 const Sidebar = () => {
   return (
     <aside className="sidebar">
-      <h1 className="logo">bloog</h1>
+      <h1 className="logo">penned</h1>
       <nav>
         <ul>
           <li>Dashboard</li>

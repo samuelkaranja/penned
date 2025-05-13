@@ -1,36 +1,206 @@
+/* Global styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
 .app {
   display: flex;
   height: 100vh;
-  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 
 .sidebar {
-  width: 240px;
-  background: #fff;
-  padding: 1rem;
-  border-right: 1px solid #eee;
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3f51b5;
+  margin-bottom: 2rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.add-entry {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar footer {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #888;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 
 .main-content {
-  flex-grow: 1;
-  background: #f4f6fa;
-  padding: 1rem;
+  margin-left: 250px;
+  padding: 2rem;
   overflow-y: auto;
+  width: calc(100% - 250px);
 }
 
+/* Header */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header .greeting h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.dashboard-header .controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dashboard-header select {
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* Card Layout */
+.dashboard .main-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.dashboard .bottom-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .card {
-  background: white;
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Active Posts */
+.active-posts .post-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.post-item img {
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
-  padding: 1rem;
+  object-fit: cover;
+}
+
+.metrics {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Comments */
+.comment {
+  margin-top: 1rem;
+}
+
+.comment strong {
+  display: block;
+  font-weight: 600;
+}
+
+.comment small {
+  color: green;
+}
+
+/* Messages */
+.messages .message p {
   margin: 0.5rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard .main-cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -40,15 +210,39 @@
 
   .sidebar {
     width: 100%;
-    order: 1;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem 0.5rem;
+  }
+
+  .sidebar nav ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .main-content {
-    order: 2;
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .dashboard .bottom-cards {
+    flex-direction: column;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
 }

@@ -22,7 +22,7 @@ function App() {
   return (
     <div className={darkMode ? "dark-mode" : ""}>
       <Router>
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/details/:title" element={<PostDetails />} />
@@ -46,7 +46,7 @@ function App() {
           pauseOnHover
           theme="colored"
         />
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );
