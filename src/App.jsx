@@ -6,9 +6,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import Nav from "./components/Nav/Nav";
 import PostDetails from "./pages/PostDetails/PostDetails";
-import { Footer } from "./components";
+import { MainLayout } from "./components";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import { Dashboard, Login, Profile, SignUp } from "./pages";
 import { useContext } from "react";
@@ -22,12 +21,14 @@ function App() {
   return (
     <div className={darkMode ? "dark-mode" : ""}>
       <Router>
-        {/* <Nav /> */}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/details/:title" element={<PostDetails />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/create-post" element={<CreatePost />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/details/:title" element={<PostDetails />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/create-post" element={<CreatePost />} />
+          </Route>
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
@@ -46,7 +47,6 @@ function App() {
           pauseOnHover
           theme="colored"
         />
-        {/* <Footer /> */}
       </Router>
     </div>
   );
