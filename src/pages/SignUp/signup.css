@@ -1,23 +1,22 @@
-.signUp {
-  max-width: 1170px;
-  margin: 20px auto 120px auto;
-  /* display: flex;
-  height: 90vh; */
+.signUp .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* .signUp .image {
-  width: 50%;
-  background: url("../../assets/blog.jpg");
-  background-size: cover;
-  background-position: center center;
-} */
+.signUp .user .frm {
+  margin: 0 auto;
+}
 
-/* .signUp .user {
-  width: 50%;
-} */
-
-.signUp h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.signUp .user .frm h2 {
+  margin: 0 0 30px 0;
   color: #000;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.signUp .user .image img {
+  width: 750px;
+  height: 100vh;
+  object-fit: cover;
 }

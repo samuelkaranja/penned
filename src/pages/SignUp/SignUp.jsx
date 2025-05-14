@@ -5,6 +5,7 @@ import { GlobalContext } from "../../context/context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Image from "../../assets/blog1.jpg";
 
 const SignUp = () => {
   const { handleLogin } = useContext(GlobalContext);
@@ -34,25 +35,13 @@ const SignUp = () => {
   return (
     <div className="signUp">
       <div className="user">
-        <h2>Sign Up Form</h2>
-        {/* Display Success or Error Messages */}
-        {/* {successMessage && (
-          <p
-            style={{
-              color: "green",
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            {successMessage}
-          </p>
-        )}
-        {errorMessage && (
-          <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>
-            {errorMessage}
-          </p>
-        )} */}
-        <SignUpForm onSubmit={handleSignUpSubmit} />
+        <div className="frm">
+          <h2>Register</h2>
+          <SignUpForm onSubmit={handleSignUpSubmit} />
+        </div>
+        <div className="image">
+          <img src={Image} alt="" />
+        </div>
       </div>
     </div>
   );
