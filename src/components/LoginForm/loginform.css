@@ -30,6 +30,7 @@ label {
   color: #000;
   border: 1px solid #3b2626;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 input:focus {

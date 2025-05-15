@@ -5,6 +5,7 @@ import { GlobalContext } from "../../context/context";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Image from "../../assets/startablog.jpg";
 
 const Login = () => {
   const { handleLogin } = useContext(GlobalContext);
@@ -32,8 +33,15 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h2>Login Form</h2>
-      <LoginForm onSubmit={handleLoginSubmit} />
+      <div className="user">
+        <div className="image">
+          <img src={Image} alt="" />
+        </div>
+        <div className="frm">
+          <h2>Log in</h2>
+          <LoginForm onSubmit={handleLoginSubmit} />
+        </div>
+      </div>
     </div>
   );
 };

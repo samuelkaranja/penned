@@ -1,4 +1,39 @@
-.login h2 {
+.login .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login .user .image {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+}
+
+.login .user .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  pointer-events: none;
+}
+
+.login .user .image img {
+  width: 750px;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.login .frm {
+  margin: 0 auto;
+}
+
+.login .frm h2 {
   color: #000;
   text-align: center;
+  text-decoration: underline;
 }

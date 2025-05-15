@@ -36,7 +36,7 @@ const SignUp = () => {
     <div className="signUp">
       <div className="user">
         <div className="frm">
-          <h2>Register</h2>
+          <h2>Create Account</h2>
           <SignUpForm onSubmit={handleSignUpSubmit} />
         </div>
         <div className="image">
