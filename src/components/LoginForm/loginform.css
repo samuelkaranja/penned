@@ -59,14 +59,14 @@ button:hover {
   cursor: pointer;
 }
 
-.signup-link {
-  margin-bottom: 200px;
+.link-options .reset-password {
+  margin-bottom: 10px;
 }
 
-.signup-link span {
+.link-options span {
   color: #000;
 }
 
-.signup-link a {
+.link-options a {
   text-decoration: underline;
 }

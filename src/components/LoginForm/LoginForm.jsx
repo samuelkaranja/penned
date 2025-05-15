@@ -37,9 +37,14 @@ const LoginForm = ({ onSubmit }) => {
         </div>
         <button type="submit">Submit</button>
       </form>
-      <div className="signup-link">
-        <span>Don't have an account? </span>
-        <Link to="/sign-up">Sign Up</Link>
+      <div className="link-options">
+        <div className="reset-password">
+          <Link to="">Reset Password</Link>
+        </div>
+        <div className="sign-up">
+          <span>Don't have an account? </span>
+          <Link to="/sign-up">Sign Up</Link>
+        </div>
       </div>
     </div>
   );
