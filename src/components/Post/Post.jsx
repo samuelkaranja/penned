@@ -30,7 +30,7 @@ const Post = ({ blog }) => {
             ? blog?.subtitle.slice(0, 80) + "..."
             : blog?.subtitle}
         </p>
-        <small className="author">author: {blog?.author.split(" ")[0]}</small>
+        <small className="author">author: {blog?.author.toLowerCase()}</small>
       </div>
     </div>
   );

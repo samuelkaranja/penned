@@ -20,9 +20,9 @@ const PostDetails = () => {
   return (
     <div className="postdetails">
       <div className="more">
-        <div className="header">
-          <span className="title">{blogdetails?.title}</span>
-          <span className="subtitle">{blogdetails?.subtitle}</span>
+        <div className="blog-header">
+          <h1 className="title">{blogdetails?.title}</h1>
+          <h6 className="subtitle">{blogdetails?.subtitle}</h6>
         </div>
         <div className="author">
           <div className="name">

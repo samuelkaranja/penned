@@ -4,7 +4,7 @@
   color: #000000;
 }
 
-.postdetails .more .header .title {
+.postdetails .more .blog-header .title {
   display: block;
   font-size: 34px;
   font-weight: 600;
@@ -12,12 +12,13 @@
   text-decoration: underline;
 }
 
-.postdetails .more .header .subtitle {
+.postdetails .more .blog-header .subtitle {
   display: block;
   font-size: 18px;
   font-weight: 400;
   font-family: "Helvetica", Arial, sans-serif;
   line-height: 1.75rem;
+  margin: 0;
   padding: 5px 0 15px 0;
   color: #3e3e3e;
 }

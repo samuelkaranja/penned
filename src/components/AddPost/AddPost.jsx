@@ -34,15 +34,15 @@ const AddPost = () => {
   };
 
   // New function for MDEditor!
-  const handleDescriptionChange = (value) => {
-    setFormData({ ...formData, description: value });
-  };
+  // const handleDescriptionChange = (value) => {
+  //   setFormData({ ...formData, description: value });
+  // };
 
   const handleFileChange = (e) => {
     setFormData({ ...formData, image: e.target.files[0] });
   };
 
-  const handlePostSubmit = async (event) => {
+  const handlePostSubmit = async () => {
     // event.preventDefault();
     const updatedFormData = { ...formData, author: user?.fullname };
 
