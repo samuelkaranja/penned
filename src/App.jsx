@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import PostDetails from "./pages/PostDetails/PostDetails";
-import { MainLayout } from "./components";
+import { MainLayout, PublicRoute } from "./components";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import { Dashboard, Login, Profile, SignUp } from "./pages";
 import { useContext } from "react";
@@ -30,8 +30,22 @@ function App() {
           </Route>
 
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/sign-up"
+            element={
+              <PublicRoute>
+                <SignUp />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
 
           {/* Catch-all route for non-existent URLs */}
           <Route path="*" element={<Navigate to="/" replace />} />

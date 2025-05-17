@@ -1,4 +1,5 @@
 export { default as MainLayout } from "./MainLayout/MainLayout";
+export { default as PublicRoute } from "./PublicRoute/PublicRoute";
 export { default as Nav } from "./Nav/Nav";
 export { default as Sidebar } from "./Dashboard/Sidebar/Sidebar";
 export { default as Banner } from "./Banner/Banner";
