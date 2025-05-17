@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import PostDetails from "./pages/PostDetails/PostDetails";
-import { MainLayout, PublicRoute } from "./components";
+import { MainLayout, PrivateRoute, PublicRoute } from "./components";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import { Dashboard, Login, Profile, SignUp } from "./pages";
 import { useContext } from "react";
@@ -24,12 +24,33 @@ function App() {
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/details/:title" element={<PostDetails />} />
+            <Route
+              path="/details/:title"
+              element={
+                <PrivateRoute>
+                  <PostDetails />
+                </PrivateRoute>
+              }
+            />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/create-post" element={<CreatePost />} />
+            <Route
+              path="/create-post"
+              element={
+                <PrivateRoute>
+                  <CreatePost />
+                </PrivateRoute>
+              }
+            />
           </Route>
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
           <Route
             path="/sign-up"
             element={
