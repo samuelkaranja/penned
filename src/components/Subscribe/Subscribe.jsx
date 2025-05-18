@@ -1,42 +1,54 @@
 import { useState } from "react";
 import "./subscribe.css";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Subscribe = () => {
   const [email, setEmail] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-
-    setSuccessMessage("You have successfully subscribed to our Newsletter!!");
-
-    setEmail("");
-
-    setTimeout(() => {
-      setSuccessMessage("");
-    }, 10000);
+  const handleEmailSubmit = () => {
+    try {
+      if (email) {
+        toast.success("You have successfully subscribed to our Newsletter!!");
+        setEmail("");
+      }
+    } catch (error) {
+      toast.error("Failed to subscribe. Please try again!!", error);
+    }
   };
 
   return (
     <div className="subscribe">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(handleEmailSubmit)}>
         <input
           type="email"
           name="email"
+          {...register("email", { required: true })}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter Your Email"
         />
+        {errors.email && errors.email.type === "required" ? (
+          <p
+            style={{
+              color: "red",
+              fontSize: "13px",
+              margin: 0,
+              textAlign: "left",
+            }}
+          >
+            Email required
+          </p>
+        ) : null}
         <button className="btn" type="submit">
           Subscribe
         </button>
       </form>
-      {successMessage && (
-        <p className="message">
-          You have successfully subscribed to our Newsletter!!
-        </p>
-      )}
     </div>
   );
 };
